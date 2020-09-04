@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Zooline.Models.AnimalesModels>
+@{
+
+    ViewData["Title"] = "Animales";
+    var cardClass = (Model.Count() > 1) ? "mx-auto mb-2 col-sm-12 col-md-4 col-lg-4" : "mx-auto mb-2 col-sm-12 col-md-12 col-lg-12";
+}
+
+<div class="card-body">
+    <div class="card-group">
+        <div class="row">
+            @foreach (var animal in Model)
+            {
+                <div class="@cardClass">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h3 class="card-title">@animal.Nombre</h3>
+                            <h5 class="card-title">Nombre Cientifico: @animal.NombreCientifico</h5>
+                            <p class="card-text">
+                                @animal.Descripcion
+                            </p>
+                            <p class="card-text"><small class="text-muted">Pertenecen al reino :@animal.Reino</small></p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <br />
+
+    </div>
+</div>
+
